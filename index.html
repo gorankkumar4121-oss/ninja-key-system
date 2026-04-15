@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ninja Scripts Key System</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    button {
+      padding: 10px 20px;
+      background: cyan;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🥷 Ninja Scripts Key Generator</h1>
+<button onclick="getKey()">Generate Key</button>
+
+<h2 id="key"></h2>
+
+<script>
+async function getKey() {
+  let res = await fetch("https://your-api-url/generate");
+  let data = await res.json();
+  document.getElementById("key").innerText = data.key;
+}
+</script>
+
+</body>
+</html>
